@@ -1,29 +1,7 @@
---- id-utils-3.2d/configure.in.orig	1999-04-04 11:52:40.000000000 +0200
-+++ id-utils-3.2d/configure.in	2003-07-27 01:39:40.000000000 +0200
-@@ -81,7 +81,7 @@
- AC_TYPE_SIGNAL
- AC_TYPE_OFF_T
- AC_TYPE_SIZE_T
--AM_TYPE_PTRDIFF_T
-+AC_CHECK_TYPES(ptrdiff_t)
- 
- ##############################################################################
- ################ Set default compilation flags ###############################
-@@ -98,11 +98,11 @@
- 
- AC_FUNC_ALLOCA
- AC_FUNC_VPRINTF
--AM_FUNC_OBSTACK
-+AC_FUNC_OBSTACK
- AC_CHECK_FUNCS(getwd getcwd link strerror isascii bcopy bzero memcpy)
- AC_REPLACE_FUNCS(strdup strndup strspn strcspn strpbrk strstr strtok)
- AC_REPLACE_FUNCS(basename dirname fnmatch error memcpy memset)
--AC_CHECK_FUNC(regcomp, , [LIBOBJS="$LIBOBJS regex.o"])
-+AC_CHECK_FUNC(regcomp, , [AC_LIBOBJ([regex])])
- 
- ##############################################################################
- ################ Internationalization ########################################
-@@ -119,9 +119,11 @@
+diff -Nur id-utils-3.2.orig/configure.in id-utils-3.2/configure.in
+--- id-utils-3.2.orig/configure.in	1996-08-07 05:16:19.000000000 +0200
++++ id-utils-3.2/configure.in	2004-02-20 18:11:12.000000000 +0100
+@@ -126,9 +126,11 @@
  else
      datadir=$ac_default_prefix/share
  fi
@@ -36,24 +14,14 @@
  
  ##############################################################################
  ################ Find a home for Emacs Lisp code #############################
-@@ -135,10 +135,6 @@
- ################ Generate the configure script ###############################
- ##############################################################################
- 
--# This is necessary so that .o files in LIBOBJS are also built via
--# the ANSI2KNR-filtering rules.
--LIBOBJS=`echo $LIBOBJS|sed 's/\.o /\$U.o /g;s/\.o$/\$U.o/'`
--
- AC_OUTPUT([Makefile
- 	   doc/Makefile
- 	   lib/Makefile
---- id-utils-3.2d/libidu/Makefile.am.orig	1999-03-28 11:06:02.000000000 +0200
-+++ id-utils-3.2d/libidu/Makefile.am	2003-07-27 01:39:54.000000000 +0200
+diff -Nur id-utils-3.2.orig/libidu/Makefile.am id-utils-3.2/libidu/Makefile.am
+--- id-utils-3.2.orig/libidu/Makefile.am	1996-07-07 18:36:06.000000000 +0200
++++ id-utils-3.2/libidu/Makefile.am	2004-02-20 18:11:56.000000000 +0100
 @@ -7,7 +7,6 @@
- libidu_a_SOURCES = dynvec.c hash.c idfile.c idread.c idwrite.c fnprint.c \
+ idu_SOURCES = dynvec.c hash.c idfile.c idread.c idwrite.c fnprint.c \
  	scanners.c walker.c
  
 -idudir = $(prefix)/share
  idu_DATA = id-lang.map
- EXTRA_DIST = $(idu_DATA)
  
+ noinst_HEADERS = dynvec.h hash.h idfile.h scanners.h tokflags.h xnls.h
