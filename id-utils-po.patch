@@ -1,0 +1,13 @@
+--- id-utils-3.2d/po/fr.po~	Wed Aug  4 00:41:43 2004
++++ id-utils-3.2d/po/fr.po	Wed Aug  4 00:41:43 2004
+@@ -11,8 +11,8 @@
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=CHARSET\n"
+-"Content-Transfer-Encoding: ENCODING\n"
++"Content-Type: text/plain; charset=iso-8859-1\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ # msgid ""
+ # msgstr ""
