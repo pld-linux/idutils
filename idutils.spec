@@ -2,12 +2,12 @@
 Summary:	ID database utilities
 Summary(pl):	Narzêdzia do bazy danych identyfikatorów
 Name:		id-utils
-Version:	3.2
+Version:	3.2d
 Release:	1
 License:	GPL
 Group:		Applications
-Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	758213344bfd1b70723b10cdb2beaef3
+Source0:	ftp://ftp.enst.fr/pub/gnu/gnits/%{name}-%{version}.tar.gz
+# Source0-md5:	1152902c1fff4fadb8a7827ad91a80b0
 Patch0:		%{name}-dirs.patch
 Patch1:		%{name}-info.patch
 BuildRequires:	autoconf >= 2.53
