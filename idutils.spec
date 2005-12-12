@@ -64,5 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*id
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/id-lang.map
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/id-lang.map
 %{_infodir}/*.info*
