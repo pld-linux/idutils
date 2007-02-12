@@ -1,6 +1,6 @@
 # maybe TODO: emacs stuff
 Summary:	ID database utilities
-Summary(pl):	Narzêdzia do bazy danych identyfikatorów
+Summary(pl.UTF-8):   NarzÄ™dzia do bazy danych identyfikatorÃ³w
 Name:		id-utils
 Version:	3.2d
 Release:	2
@@ -25,12 +25,12 @@ form, literal numbers, or words of human-readable text. Database
 queries can be issued from the command-line, or from within emacs,
 serving as an augmented tags facility.
 
-%description -l pl
-mkid to proste, szybkie, o du¿ej pojemno¶ci, niezale¿ne od jêzyka
-narzêdzie do baz danych identyfikatorów. W³a¶ciwie termin
-"identyfikator" jest zbyt w±ski - mkid przechowuje tokeny, które mog±
-byæ identyfikatorami programu w dowolnej formie, liczbami czy s³owami.
-Zapytania do bazy danych mog± byæ wydawane z linii poleceñ lub spod
+%description -l pl.UTF-8
+mkid to proste, szybkie, o duÅ¼ej pojemnoÅ›ci, niezaleÅ¼ne od jÄ™zyka
+narzÄ™dzie do baz danych identyfikatorÃ³w. WÅ‚aÅ›ciwie termin
+"identyfikator" jest zbyt wÄ…ski - mkid przechowuje tokeny, ktÃ³re mogÄ…
+byÄ‡ identyfikatorami programu w dowolnej formie, liczbami czy sÅ‚owami.
+Zapytania do bazy danych mogÄ… byÄ‡ wydawane z linii poleceÅ„ lub spod
 emacsa.
 
 %prep
