@@ -1,6 +1,6 @@
 # maybe TODO: emacs stuff
 Summary:	ID database utilities
-Summary(pl.UTF-8):   Narzędzia do bazy danych identyfikatorów
+Summary(pl.UTF-8):	Narzędzia do bazy danych identyfikatorów
 Name:		id-utils
 Version:	3.2d
 Release:	2
