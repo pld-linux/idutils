@@ -1,26 +1,133 @@
---- id-utils-3.2d/doc/id-utils.texi.orig	1999-04-05 12:10:26.000000000 +0200
-+++ id-utils-3.2d/doc/id-utils.texi	2003-07-27 01:41:48.000000000 +0200
-@@ -20,14 +20,15 @@
+--- idutils-4.2/doc/idutils.texi.orig	2006-07-22 00:33:33.000000000 +0200
++++ idutils-4.2/doc/idutils.texi	2007-08-08 21:39:09.116954210 +0200
+@@ -19,14 +19,15 @@
+ @syncodeindex vr cp
  
- @ifinfo
  @format
 -START-INFO-DIR-ENTRY
--* ID database: (id-utils).              Identifier database utilities.
--* mkid: (id-utils)mkid invocation.      Creating an ID database.
--* lid: (id-utils)lid invocation.        Matching words and patterns.
--* fid: (id-utils)fid invocation.        Listing a file's tokens.
--* fnid: (id-utils)fnid invocation.      Looking up file names.
--* xtokid: (id-utils)xtokid invocation.  Testing mkid scanners.
+-* ID database: (idutils).              Identifier database utilities.
+-* mkid: (idutils)mkid invocation.      Creating an ID database.
+-* lid: (idutils)lid invocation.        Matching words and patterns.
+-* fid: (idutils)fid invocation.        Listing a file's tokens.
+-* fnid: (idutils)fnid invocation.      Looking up file names.
+-* xtokid: (idutils)xtokid invocation.  Testing mkid scanners.
 -END-INFO-DIR-ENTRY
 +@dircategory Miscellaneous:
 +@direntry
-+* ID database: (id-utils).		Identifier database utilities
-+* mkid: (id-utils)mkid.			Creating an ID database
-+* lid: (id-utils)lid.			Matching words and patterns
-+* fid: (id-utils)fid.			Listing a file's tokens
-+* fnid: (id-utils)fnid.			Looking up file names
-+* xtokid: (id-utils)xtokid.		Testing mkid scanners
++* ID database: (idutils).		Identifier database utilities.
++* mkid: (idutils)mkid.			Creating an ID database
++* lid: (idutils)lid.			Matching words and patterns
++* fid: (idutils)fid.			Listing a file's tokens
++* fnid: (idutils)fnid.			Looking up file names
++* xtokid: (idutils)xtokid.		Testing mkid scanners
 +@end direntry
  @end format
- @end ifinfo
  
+ @copying
+@@ -73,11 +74,11 @@
+ * Introduction::                Overview of the tools with tutorial.
+ * Quick start::                 Quick start procedure.
+ * Common options::              Common command-line options.
+-* mkid invocation::             Creating an ID database.
+-* lid invocation::              Querying an ID database by token.
+-* fid invocation::              Listing a file's tokens.
+-* fnid invocation::             Looking up file names.
+-* xtokid invocation::           Testing language scanners.
++* mkid::                        Creating an ID database.
++* lid::                         Querying an ID database by token.
++* fid::                         Listing a file's tokens.
++* fnid::                        Looking up file names.
++* xtokid::                      Testing language scanners.
+ * Past and Future::             History and future directions.
+ * Index::                       General index.
+ @end menu
+@@ -344,7 +345,7 @@
+ If the list of files is being printed on a terminal, brace notation is
+ the default.  If not, file names are separated by spaces if the
+ @var{key} is included in the output, and by newlines the @var{key style}
+-is @samp{none} (@pxref{lid invocation}).
++is @samp{none} (@pxref{lid}).
+ 
+ @end table
+ 
+@@ -806,7 +807,7 @@
+ read and understand if you don't feel that speed is so important.
+ 
+ @c ************* gkm *********************************************************
+-@node mkid invocation
++@node mkid
+ @chapter @samp{mkid}: Creating an ID Database
+ @cindex creating databases
+ @cindex databases, creating
+@@ -872,7 +873,7 @@
+ @end table
+ 
+ @c ************* gkm *********************************************************
+-@node lid invocation
++@node lid
+ @chapter @code{lid}: Querying an ID Database by Token
+ 
+ The @file{lid} program accepts @var{patterns} on the command line which
+@@ -984,7 +985,7 @@
+ is @samp{grep}, the lines that match @var{pattern} are printed in the
+ same format as @samp{egrep -n}.  When @var{style} is @samp{edit}, the
+ file names are passed to an editor, and if possible @var{pattern} is
+-passed as an initial search string (@pxref{eid invocation}).  When
++passed as an initial search string (@pxref{eid}).  When
+ @var{style} is @samp{none}, the file names are not processed in any way.
+ This can be useful if you wish to see what tokens match a @var{pattern},
+ but don't care about where they reside.
+@@ -1040,7 +1041,7 @@
+ @menu
+ * lid aliases::                 Aliases for specialized lid queries
+ * Emacs gid interface::         GNU Emacs query interface
+-* eid invocation::              Invoking an editor on query results
++* eid::                         Invoking an editor on query results
+ @end menu
+ 
+ @c ************* gkm *********************************************************
+@@ -1048,7 +1049,7 @@
+ @section Aliases for Specialized @file{lid} Queries
+ 
+ Historically, the ID utilities have provided several query interfaces
+-which are specializations of @code{lid} (@pxref{lid invocation}).
++which are specializations of @code{lid} (@pxref{lid}).
+ 
+ @table @file
+ 
+@@ -1099,7 +1100,7 @@
+ GNU Emacs Manual}).
+ 
+ @c ************* gkm *********************************************************
+-@node eid invocation
++@node eid
+ @section @code{eid}: Invoking an Editor on Query Results
+ 
+ @pindex eid
+@@ -1191,7 +1192,7 @@
+ @end table
+ 
+ @c ************* gkm *********************************************************
+-@node fid invocation
++@node fid
+ @chapter @code{fid}: Listing a file's tokens
+ 
+ @pindex fid
+@@ -1211,7 +1212,7 @@
+ separated by spaces.  Otherwise, the tokens are printed one per line.
+ 
+ @c ************* gkm *********************************************************
+-@node fnid invocation
++@node fnid
+ @chapter @code{fnid}: Looking up filenames
+ 
+ @pindex fnid
+@@ -1236,7 +1237,7 @@
+ here protects the @samp{*} from being expanded by the shell.)
+ 
+ @c ************* gkm *********************************************************
+-@node xtokid invocation
++@node xtokid
+ @chapter @file{xtokid}: Testing Language Scanners
+ 
+ @file{xtokid} accepts the names of files and/or directories on the
