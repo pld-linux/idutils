@@ -1,21 +1,24 @@
 # maybe TODO: emacs stuff
 Summary:	ID database utilities
 Summary(pl.UTF-8):	Narzędzia do bazy danych identyfikatorów
-Name:		id-utils
-Version:	3.2d
-Release:	2
-License:	GPL
+Name:		idutils
+Version:	4.2
+Release:	1
+License:	GPL v2+
 Group:		Applications
-Source0:	ftp://ftp.enst.fr/pub/gnu/gnits/%{name}-%{version}.tar.gz
-# Source0-md5:	1152902c1fff4fadb8a7827ad91a80b0
-Patch0:		%{name}-dirs.patch
-Patch1:		%{name}-info.patch
-Patch2:		%{name}-po.patch
-BuildRequires:	autoconf >= 2.53
+Source0:	ftp://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.gz
+# Source0-md5:	4bbd2cb0d566ab29e41088cc028ad710
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-pl.po-update.patch
+URL:		http://www.gnu.org/software/idutils/
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	texinfo
+Obsoletes:	id-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_datadir	%{_sysconfdir}
 
 %description
 `mkid' is a simple, fast, high-capacity, language-independent
@@ -37,11 +40,10 @@ emacsa.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__gettextize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
