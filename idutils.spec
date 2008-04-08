@@ -6,7 +6,7 @@ Version:	4.2
 Release:	1
 License:	GPL v2+
 Group:		Applications
-Source0:	ftp://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.gz
 # Source0-md5:	4bbd2cb0d566ab29e41088cc028ad710
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
