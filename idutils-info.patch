@@ -1,47 +1,51 @@
---- idutils-4.2/doc/idutils.texi.orig	2006-07-22 00:33:33.000000000 +0200
-+++ idutils-4.2/doc/idutils.texi	2007-08-08 21:39:09.116954210 +0200
-@@ -19,14 +19,15 @@
- @syncodeindex vr cp
- 
+--- idutils-4.5/doc/idutils.texi.orig	2010-05-09 20:43:56.000000000 +0200
++++ idutils-4.5/doc/idutils.texi	2010-11-13 21:38:49.451101613 +0100
+@@ -21,15 +21,16 @@
+ @dircategory Text creation and manipulation
+ @ifinfo
  @format
 -START-INFO-DIR-ENTRY
--* ID database: (idutils).              Identifier database utilities.
+-* ID utilities: (idutils).             Indexing and searching utilities.
 -* mkid: (idutils)mkid invocation.      Creating an ID database.
 -* lid: (idutils)lid invocation.        Matching words and patterns.
 -* fid: (idutils)fid invocation.        Listing a file's tokens.
+-* gid: (idutils)gid invocation.        Token-based grep.
 -* fnid: (idutils)fnid invocation.      Looking up file names.
 -* xtokid: (idutils)xtokid invocation.  Testing mkid scanners.
 -END-INFO-DIR-ENTRY
 +@dircategory Miscellaneous:
 +@direntry
-+* ID database: (idutils).		Identifier database utilities.
++* ID utilities: (idutils).		Indexing and searching utilities
 +* mkid: (idutils)mkid.			Creating an ID database
 +* lid: (idutils)lid.			Matching words and patterns
 +* fid: (idutils)fid.			Listing a file's tokens
++* gid: (idutils)gid.			Token-based grep
 +* fnid: (idutils)fnid.			Looking up file names
 +* xtokid: (idutils)xtokid.		Testing mkid scanners
 +@end direntry
  @end format
+ @end ifinfo
  
- @copying
-@@ -73,11 +74,11 @@
+@@ -77,12 +78,12 @@
  * Introduction::                Overview of the tools with tutorial.
  * Quick start::                 Quick start procedure.
  * Common options::              Common command-line options.
 -* mkid invocation::             Creating an ID database.
 -* lid invocation::              Querying an ID database by token.
 -* fid invocation::              Listing a file's tokens.
+-* gid invocation::              Token-based grep
 -* fnid invocation::             Looking up file names.
 -* xtokid invocation::           Testing language scanners.
 +* mkid::                        Creating an ID database.
 +* lid::                         Querying an ID database by token.
 +* fid::                         Listing a file's tokens.
++* gid::                         Token-based grep
 +* fnid::                        Looking up file names.
 +* xtokid::                      Testing language scanners.
  * Past and Future::             History and future directions.
  * Index::                       General index.
  @end menu
-@@ -344,7 +345,7 @@
+@@ -359,7 +360,7 @@
  If the list of files is being printed on a terminal, brace notation is
  the default.  If not, file names are separated by spaces if the
  @var{key} is included in the output, and by newlines the @var{key style}
@@ -50,7 +54,7 @@
  
  @end table
  
-@@ -806,7 +807,7 @@
+@@ -829,7 +830,7 @@
  read and understand if you don't feel that speed is so important.
  
  @c ************* gkm *********************************************************
@@ -59,7 +63,7 @@
  @chapter @samp{mkid}: Creating an ID Database
  @cindex creating databases
  @cindex databases, creating
-@@ -872,7 +873,7 @@
+@@ -895,7 +896,7 @@
  @end table
  
  @c ************* gkm *********************************************************
@@ -68,7 +72,7 @@
  @chapter @code{lid}: Querying an ID Database by Token
  
  The @file{lid} program accepts @var{patterns} on the command line which
-@@ -984,7 +985,7 @@
+@@ -1007,7 +1008,7 @@
  is @samp{grep}, the lines that match @var{pattern} are printed in the
  same format as @samp{egrep -n}.  When @var{style} is @samp{edit}, the
  file names are passed to an editor, and if possible @var{pattern} is
@@ -77,7 +81,7 @@
  @var{style} is @samp{none}, the file names are not processed in any way.
  This can be useful if you wish to see what tokens match a @var{pattern},
  but don't care about where they reside.
-@@ -1040,7 +1041,7 @@
+@@ -1063,7 +1064,7 @@
  @menu
  * lid aliases::                 Aliases for specialized lid queries
  * Emacs gid interface::         GNU Emacs query interface
@@ -86,7 +90,7 @@
  @end menu
  
  @c ************* gkm *********************************************************
-@@ -1048,7 +1049,7 @@
+@@ -1071,7 +1072,7 @@
  @section Aliases for Specialized @file{lid} Queries
  
  Historically, the ID utilities have provided several query interfaces
@@ -95,7 +99,7 @@
  
  @table @file
  
-@@ -1099,7 +1100,7 @@
+@@ -1122,7 +1123,7 @@
  GNU Emacs Manual}).
  
  @c ************* gkm *********************************************************
@@ -104,7 +108,7 @@
  @section @code{eid}: Invoking an Editor on Query Results
  
  @pindex eid
-@@ -1191,7 +1192,7 @@
+@@ -1214,7 +1215,7 @@
  @end table
  
  @c ************* gkm *********************************************************
@@ -113,7 +117,7 @@
  @chapter @code{fid}: Listing a file's tokens
  
  @pindex fid
-@@ -1211,7 +1212,7 @@
+@@ -1234,7 +1235,7 @@
  separated by spaces.  Otherwise, the tokens are printed one per line.
  
  @c ************* gkm *********************************************************
@@ -122,8 +126,17 @@
  @chapter @code{fnid}: Looking up filenames
  
  @pindex fnid
-@@ -1236,7 +1237,7 @@
+@@ -1259,7 +1260,7 @@
  here protects the @samp{*} from being expanded by the shell.)
+ 
+ @c ************* gkm *********************************************************
+-@node gid invocation
++@node gid
+ @chapter @code{gid}: Token-based grep
+ 
+ @pindex gid
+@@ -1278,7 +1279,7 @@
+ @noindent lists each line of each file in the database that contains that token.
  
  @c ************* gkm *********************************************************
 -@node xtokid invocation

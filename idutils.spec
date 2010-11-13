@@ -2,19 +2,21 @@
 Summary:	ID database utilities
 Summary(pl.UTF-8):	Narzędzia do bazy danych identyfikatorów
 Name:		idutils
-Version:	4.2
+Version:	4.5
 Release:	1
-License:	GPL v2+
+License:	GPL v3+
 Group:		Applications
-Source0:	http://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.gz
-# Source0-md5:	4bbd2cb0d566ab29e41088cc028ad710
+Source0:	http://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.xz
+# Source0-md5:	d8ef86c82dec20ca2f97a387a1fa7c33
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/idutils/
-BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	autoconf >= 2.61
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	gettext-devel >= 0.18
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
+BuildRequires:	xz
 Obsoletes:	id-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -47,7 +49,8 @@ emacsa.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 
 %{__make}
 
@@ -64,7 +67,24 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc ChangeLog README
-%attr(755,root,root) %{_bindir}/*id
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
+%attr(755,root,root) %{_bindir}/aid
+%attr(755,root,root) %{_bindir}/defid
+%attr(755,root,root) %{_bindir}/eid
+%attr(755,root,root) %{_bindir}/fid
+%attr(755,root,root) %{_bindir}/fnid
+%attr(755,root,root) %{_bindir}/gid
+%attr(755,root,root) %{_bindir}/lid
+%attr(755,root,root) %{_bindir}/mkid
+%attr(755,root,root) %{_bindir}/xtokid
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/id-lang.map
-%{_infodir}/*.info*
+%{_mandir}/man1/aid.1*
+%{_mandir}/man1/defid.1*
+%{_mandir}/man1/eid.1*
+%{_mandir}/man1/fid.1*
+%{_mandir}/man1/fnid.1*
+%{_mandir}/man1/gid.1*
+%{_mandir}/man1/lid.1*
+%{_mandir}/man1/mkid.1*
+%{_mandir}/man1/xtokid.1*
+%{_infodir}/idutils.info*
