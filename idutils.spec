@@ -3,7 +3,7 @@ Summary:	ID database utilities
 Summary(pl.UTF-8):	Narzędzia do bazy danych identyfikatorów
 Name:		idutils
 Version:	4.5
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications
 Source0:	http://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.xz
@@ -64,6 +64,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
+%postun	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
