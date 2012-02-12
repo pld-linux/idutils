@@ -2,12 +2,12 @@
 Summary:	ID database utilities
 Summary(pl.UTF-8):	Narzędzia do bazy danych identyfikatorów
 Name:		idutils
-Version:	4.5
-Release:	2
+Version:	4.6
+Release:	1
 License:	GPL v3+
 Group:		Applications
 Source0:	http://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.xz
-# Source0-md5:	d8ef86c82dec20ca2f97a387a1fa7c33
+# Source0-md5:	99b572536377fcddb4d38e86a3c215fd
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/idutils/
