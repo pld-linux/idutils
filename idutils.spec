@@ -10,6 +10,7 @@ Source0:	http://ftp.gnu.org/gnu/idutils/%{name}-%{version}.tar.xz
 # Source0-md5:	99b572536377fcddb4d38e86a3c215fd
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
+Patch2:		stdio.patch
 URL:		http://www.gnu.org/software/idutils/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.11
@@ -42,6 +43,7 @@ emacsa.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__gettextize}

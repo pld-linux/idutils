@@ -1,0 +1,18 @@
+--- idutils-4.6/lib/stdio.in.h~	2013-12-04 17:47:43.000000000 +0100
++++ idutils-4.6/lib/stdio.in.h	2013-12-04 17:54:53.845806176 +0100
+@@ -1021,13 +1021,13 @@
+ _GL_CXXALIAS_RPL (gets, char *, (char *s));
+ # else
+ _GL_CXXALIAS_SYS (gets, char *, (char *s));
+-#  undef gets
++//#  undef gets
+ # endif
+ _GL_CXXALIASWARN (gets);
+ /* It is very rare that the developer ever has full control of stdin,
+    so any use of gets warrants an unconditional warning.  Assume it is
+    always declared, since it is required by C89.  */
+-_GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");
++//_GL_WARN_ON_USE (gets, "gets is a security hole - use fgets instead");
+ #endif
+ 
+ 

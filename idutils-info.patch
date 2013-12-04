@@ -45,6 +45,33 @@
  * Past and Future::             History and future directions.
  * Index::                       General index.
  @end menu
+@@ -170,7 +170,7 @@
+ @node Quick start
+ @chapter Quick Start Procedure
+ 
+-@table @bullet
++@enumerate
+ 
+ Unpack the distribution.
+ 
+@@ -186,7 +186,7 @@
+ 
+ Type @samp{lid FILE}, then @samp{gid strtok}, then @samp{aid stdout}.
+ 
+-@end table
++@end enumerate
+ 
+ You have just built, installed and used the most common commands of the
+ GNU ID utilities.  If you ever need help remembering which system header
+@@ -317,7 +317,7 @@
+ tree walker will stop short at these files and directories and their
+ contents will not be scanned.
+ 
+-@itemx --files0-from=@var{FILE}
++@item --files0-from=@var{FILE}
+ @opindex --files0-from=@var{FILE}
+ Rather than processing files named on the command line, process those
+ named in file @var{FILE}; each name is terminated by a null byte.
 @@ -359,7 +360,7 @@
  If the list of files is being printed on a terminal, brace notation is
  the default.  If not, file names are separated by spaces if the
@@ -144,3 +171,21 @@
  @chapter @file{xtokid}: Testing Language Scanners
  
  @file{xtokid} accepts the names of files and/or directories on the
+@@ -1363,7 +1363,7 @@
+ @cindex future
+ Future releases of @code{idutils} might include:
+ 
+-@table @bullet
++@enumerate
+ 
+ an optional coupling with GNU @code{grep}, so that @code{grep} can use
+ an ID database for hints
+@@ -1372,7 +1372,7 @@
+ 
+ incremental update of the ID database.
+ 
+-@end table
++@end enumerate
+ 
+ @c ***************************************************************************
+ @node Index
